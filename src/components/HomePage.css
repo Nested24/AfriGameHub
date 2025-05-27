@@ -1,0 +1,91 @@
+/* HomePage.css */
+
+.homepage {
+  background: linear-gradient(135deg, #0d2833, #3a5e69, #6c8792);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Push content to the top */
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.homepage-header {
+  max-width: 650px;
+}
+
+.homepage-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 15px;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #528580, 0 0 20px #00ffe7;
+  letter-spacing: 3px;
+  animation: glow 2.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+  }
+  to {
+    text-shadow: 0 0 30px #00ffe7, 0 0 50px #00ffe7;
+  }
+}
+
+.homepage-header p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #a0e9ea;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 255, 231, 0.5);
+  line-height: 1.6;
+}
+
+/* Container for all buttons in a column */
+.homepage-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* Vertical spacing between button rows */
+}
+
+/* Row holding first two buttons side by side */
+.button-row {
+  display: flex;
+  gap: 20px; /* Horizontal space between Browse and Submit */
+}
+
+/* Style for the Join button with extra margin on top */
+.join-button {
+  margin-top: 25px;
+}
+
+/* General button styles */
+.homepage-buttons button {
+  background: linear-gradient(45deg, #00ffe7, #007fff);
+  border: none;
+  padding: 18px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f2027;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 255, 231, 0.6);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* space between emoji and text */
+}
+
+/* Hover effect */
+.homepage-buttons button:hover {
+  background: linear-gradient(45deg, #007fff, #00ffe7);
+  box-shadow: 0 6px 20px rgba(0, 255, 231, 0.9);
+  transform: translateY(-4px);
+}
