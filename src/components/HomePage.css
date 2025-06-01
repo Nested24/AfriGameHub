@@ -95,9 +95,11 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sidebar-img:hover {
+.sidebar-img:hover,
+.sidebar-img:focus-visible {
   transform: scale(1.05);
   box-shadow: 0 8px 30px rgba(0, 255, 231, 0.4);
+  outline: none;
 }
 
 @keyframes float {
@@ -172,10 +174,12 @@
   transition: all 0.3s ease;
 }
 
-.controller-img:hover {
+.controller-img:hover,
+.controller-img:focus-visible {
   opacity: 1;
   transform: scale(1.1);
   box-shadow: 0 8px 30px rgba(0, 255, 231, 0.5);
+  outline: none;
 }
 
 .controller-img-3d {
@@ -326,38 +330,157 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Bottom Gaming Section */
-.bottom-gaming-section {
-  width: 100%;
-  margin-top: 50px;
+/* Tabs Section */
+.tabs-section {
+  max-width: 900px;
+  margin: 40px auto 30px auto;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 231, 0.25);
+  box-shadow: 0 6px 24px rgba(0, 255, 231, 0.15);
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
 }
 
-.gaming-showcase {
+.tabs-label {
+  color: #00ffe7;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  text-shadow: 0 0 7px #00ffe7;
+  user-select: none;
+}
+
+.tabs-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  gap: 12px;
+  justify-content: center;
 }
 
-.showcase-img {
-  width: 200px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid rgba(0, 255, 231, 0.3);
-  box-shadow: 0 5px 20px rgba(0, 255, 231, 0.2);
+.tab-button {
+  background: transparent;
+  border: 2.5px solid transparent;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #a0e9ea;
+  cursor: pointer;
   transition: all 0.3s ease;
-  opacity: 0.9;
+  user-select: none;
+  white-space: nowrap;
+  box-shadow: inset 0 0 12px rgba(0, 255, 231, 0.1);
+  position: relative;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
 }
 
-.showcase-img:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 255, 231, 0.4);
-  opacity: 1;
+.tab-button:hover,
+.tab-button:focus-visible {
+  outline: none;
+  border-color: #00ffe7;
+  color: #00ffe7;
+  box-shadow:
+    0 0 12px #00ffe7,
+    inset 0 0 20px #00ffe7;
 }
 
-/* New Sections Styling */
+.active-tab {
+  background: linear-gradient(135deg, #00ffe7, #007fff);
+  color: #0a1f2c;
+  border-color: #00ffe7;
+  box-shadow:
+    0 0 20px #00ffe7,
+    inset 0 0 30px #00ffe7;
+  font-weight: 900;
+  position: relative;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.active-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background: #00ffe7;
+  border-radius: 2px;
+  box-shadow: 0 0 15px #00ffe7;
+}
+
+.tab-button:focus-visible {
+  outline: 3px solid #00ffe7;
+  outline-offset: 3px;
+}
+
+/* Games List */
+.games-list {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.game-card {
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1.8px solid rgba(0, 255, 231, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 255, 231, 0.25);
+  color: #a0e9ea;
+  text-align: left;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.game-card:hover,
+.game-card:focus-visible {
+  transform: translateY(-5px);
+  outline: none;
+  box-shadow: 0 14px 42px rgba(0, 255, 231, 0.5);
+  color: #00ffe7;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Make game-card keyboard focus distinct */
+.game-card:focus-visible {
+  outline: 3px solid #00ffe7;
+  outline-offset: 4px;
+}
+
+.game-name {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffe7;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+}
+
+.game-details {
+  font-size: 1.05rem;
+  margin: 3px 0;
+  color: #a0e9ea;
+}
+
+.no-games-msg {
+  font-size: 1.2rem;
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-top: 24px;
+  text-shadow: 0 0 5px #ff6b6b;
+}
+
+/* Project Aim Section */
 .project-aim-section {
   max-width: 800px;
   margin: 60px auto 40px auto;
@@ -386,6 +509,7 @@
   white-space: pre-line;
 }
 
+/* Partners Section */
 .partners-section {
   max-width: 800px;
   margin: 40px auto;
@@ -413,6 +537,7 @@
   color: #a0e9ea;
 }
 
+/* Contact Section */
 .contact-section {
   max-width: 600px;
   margin: 40px auto 80px auto;
@@ -458,8 +583,120 @@
   font-weight: 600;
 }
 
-.contact-section a:hover {
+.contact-section a:hover,
+.contact-section a:focus-visible {
   text-decoration: underline;
+  outline: none;
+}
+
+/* Game Submission Form Styles */
+.game-submission-form {
+  max-width: 500px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 18px;
+  border: 1.5px solid rgba(0, 255, 231, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 255, 231, 0.3);
+  padding: 30px 25px;
+  margin: 30px auto 50px;
+  font-family: 'Poppins', sans-serif;
+  color: #a0e9ea;
+  text-align: left;
+  user-select: none;
+  z-index: 10;
+}
+
+.game-submission-form h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #00ffe7;
+  text-shadow: 0 0 15px #00ffe7;
+  font-weight: 800;
+}
+
+.game-submission-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #00ffe7;
+  text-shadow: 0 0 7px #00ffe7;
+}
+
+.game-submission-form input[type="text"],
+.game-submission-form select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1.5px solid rgba(0, 255, 231, 0.25);
+  border-radius: 12px;
+  color: #c4f8f4;
+  font-size: 1.05rem;
+  font-weight: 400;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-submission-form input[type="text"]:focus,
+.game-submission-form select:focus {
+  outline: none;
+  border-color: #00ffe7;
+  box-shadow: 0 0 12px #00ffe7;
+  color: #00ffe7;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-top: -14px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  text-shadow: 0 0 5px #ff6b6b;
+}
+
+.submit-error {
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #ff6b6b;
+  text-shadow: 0 0 5px #ff6b6b;
+  text-align: center;
+}
+
+.submit-button {
+  background: linear-gradient(45deg, #00ffe7, #007fff);
+  border: none;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a1f2c;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 0 6px 25px rgba(0, 255, 231, 0.7);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1.1px;
+  user-select: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.submit-button:hover,
+.submit-button:focus-visible {
+  background: linear-gradient(45deg, #007fff, #00ffe7);
+  box-shadow: 0 8px 35px rgba(0, 255, 231, 0.9);
+  outline: none;
+  color: #0a1f2c;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 255, 231, 0.6);
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 /* Responsive Design */
@@ -467,12 +704,11 @@
   .sidebar {
     width: 250px;
   }
-  
+
   .homepage {
     margin: 0 250px;
     width: calc(100% - 500px);
   }
-  
   .floating-controller {
     display: none;
   }
@@ -482,17 +718,17 @@
   .sidebar {
     transform: translateX(-100%);
   }
-  
+
   .right-sidebar {
     transform: translateX(100%);
   }
-  
+
   .homepage {
     margin: 0;
     width: 100%;
     padding: 40px 20px;
   }
-  
+
   .floating-controller {
     display: none;
   }
@@ -502,62 +738,66 @@
   .homepage {
     padding: 40px 15px;
   }
-  
+
   .homepage-header {
     padding: 30px 20px;
   }
-  
+
   .homepage-header h1 {
     font-size: 2.8rem;
     letter-spacing: 2px;
   }
-  
+
   .homepage-header p {
     font-size: 1.1rem;
     margin-bottom: 30px;
   }
-  
+
   .button-row {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .homepage-buttons button {
     font-size: 1rem;
     padding: 15px 30px;
     min-width: 200px;
   }
-  
+
   .gaming-showcase {
     gap: 15px;
   }
-  
+
   .showcase-img {
     width: 150px;
     height: 100px;
   }
-  
+
   .project-aim-section {
     margin: 40px 20px 30px 20px;
     padding: 30px 20px;
   }
-  
+
   .project-aim-section h2 {
     font-size: 2rem;
   }
-  
+
   .partners-section {
     margin: 30px 20px;
     padding: 30px 20px;
   }
-  
+
   .contact-section {
     margin: 30px 20px 50px 20px;
     padding: 25px 15px;
   }
-  
+
   .contact-section h2 {
     font-size: 2rem;
+  }
+
+  .tabs-section {
+    margin: 30px 15px;
   }
 }
 
@@ -565,52 +805,52 @@
   .homepage-header {
     padding: 25px 15px;
   }
-  
+
   .homepage-header h1 {
     font-size: 2.2rem;
     letter-spacing: 1px;
   }
-  
+
   .homepage-header p {
     font-size: 1rem;
     line-height: 1.6;
   }
-  
+
   .homepage-buttons button {
     font-size: 0.95rem;
     padding: 14px 25px;
     min-width: 180px;
   }
-  
+
   .gaming-showcase {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .showcase-img {
     width: 180px;
     height: 120px;
   }
-  
+
   .project-aim-section {
     margin: 30px 15px 25px 15px;
     padding: 25px 15px;
   }
-  
+
   .project-aim-section h2 {
     font-size: 1.7rem;
   }
-  
+
   .partners-section {
     margin: 25px 15px;
     padding: 25px 15px;
   }
-  
+
   .contact-section {
     margin: 25px 15px 40px 15px;
     padding: 20px 12px;
   }
-  
+
   .contact-section h2 {
     font-size: 1.8rem;
   }
@@ -622,11 +862,11 @@
     animation: none;
     text-shadow: 0 0 20px #00ffe7;
   }
-  
+
   .floating-controller {
     animation: none;
   }
-  
+
   .sidebar-icon {
     animation: none;
   }
@@ -636,7 +876,9 @@
 .sidebar-img:focus,
 .controller-img:focus,
 .showcase-img:focus,
-.contact-section a:focus {
+.contact-section a:focus,
+.tab-button:focus-visible,
+.game-card:focus-visible {
   outline: 3px solid #00ffe7;
   outline-offset: 2px;
 }
@@ -646,9 +888,8 @@
   .sidebar:hover {
     transform: translateX(0);
   }
-  
+
   .right-sidebar:hover {
     transform: translateX(0);
   }
 }
-

@@ -1,13 +1,18 @@
-// src/App.js
 import React from 'react';
-import GameList from './components/GameList';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './Homepage';
+import BrowseGames from './BrowseGames';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <GameList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/browse-games" element={<BrowseGames />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
+
