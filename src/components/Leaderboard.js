@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Trophy, Star, Medal, Crown, Zap, TrendingUp, Award, Users } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
