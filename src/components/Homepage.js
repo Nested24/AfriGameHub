@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Gamepad2, Upload, Users, Star, Globe, Zap, Trophy, 
   Play, ArrowRight, TrendingUp, Award, Heart, Download 
