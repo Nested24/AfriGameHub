@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Trophy, Calendar, Users, Clock, Star, Award, 
-  Zap, Target, Gift, Play, ArrowRight, Crown 
+  Trophy, Calendar, Users, Clock, Award, 
+  Zap, Gift, ArrowRight, Crown 
 } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 
