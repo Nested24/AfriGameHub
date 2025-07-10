@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Globe, Mail, Phone, Github, Twitter, Linkedin } from 'lucide-react';
+import { Heart, Globe, Mail, Phone, Github, Twitter, Linkedin, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
@@ -21,51 +21,66 @@ const Footer = () => {
     { href: '/contact', label: 'Contact Us' },
     { href: '/help', label: 'Help Center' },
     { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' }
+    { href: '/terms', label: 'Terms of Service' },
+    { href: '/developers', label: 'Developer Resources' },
+    { href: '/api', label: 'API Documentation' }
+  ];
+
+  const companyLinks = [
+    { href: '/about', label: 'About AfriGameHub' },
+    { href: '/careers', label: 'Careers' },
+    { href: '/press', label: 'Press Kit' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/investors', label: 'Investors' },
+    { href: '/partnerships', label: 'Partnerships' }
   ];
 
   return (
-    <footer className="relative bg-gray-950/80 backdrop-blur-xl border-t border-cyan-500/20 mt-20">
+    <footer className="relative bg-slate-950/90 backdrop-blur-xl border-t border-slate-800/50 mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
+        {/* Main Footer Content */}
+        <div className="grid lg:grid-cols-5 gap-12 mb-12">
+          {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center pulse-glow">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
                 <span className="text-2xl">🎮</span>
               </div>
               <h3 className="text-2xl font-bold gradient-text font-orbitron">
                 AfriGameHub
               </h3>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md leading-relaxed font-space">
-              Empowering African game developers by providing a platform to showcase their creativity 
-              and connect with a global gaming community. Building the future of African gaming, one game at a time.
+            
+            <p className="text-gray-300 mb-6 max-w-md leading-relaxed font-space text-lg">
+              Empowering African game developers to create world-class games and reach global audiences. 
+              Building the future of African gaming, one game at a time.
             </p>
-            <div className="flex items-center space-x-2 text-gray-400 mb-6 font-space">
+            
+            <div className="flex items-center space-x-2 text-gray-400 mb-8 font-space">
               <span>Made with</span>
               <Heart className="w-4 h-4 text-red-400 fill-current animate-pulse" />
               <span>for African developers</span>
             </div>
             
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map(({ icon: Icon, href, label, color }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className={`w-10 h-10 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-center text-gray-400 ${color} transition-all duration-300 hover:scale-110 focus-ring`}
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+            {/* Newsletter Signup */}
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-white font-space">Stay Updated</h4>
+              <div className="flex space-x-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none font-space"
+                />
+                <button className="btn-primary px-4 py-2 rounded-xl">
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-6 font-space">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-white mb-6 font-space">Platform</h4>
             <ul className="space-y-3">
               {quickLinks.map(({ href, label }) => (
                 <li key={label}>
@@ -80,10 +95,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support & Contact */}
+          {/* Support Links */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-6 font-space">Support</h4>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-3">
               {supportLinks.map(({ href, label }) => (
                 <li key={label}>
                   <a 
@@ -95,7 +110,25 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6 font-space">Company</h4>
+            <ul className="space-y-3 mb-6">
+              {companyLinks.map(({ href, label }) => (
+                <li key={label}>
+                  <a 
+                    href={href} 
+                    className="text-gray-400 hover:text-cyan-400 transition-colors font-space hover:translate-x-1 transform duration-200 inline-block"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
             
+            {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400 group">
                 <Mail className="w-4 h-4 group-hover:text-cyan-400 transition-colors" />
@@ -123,8 +156,22 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Social Links */}
+        <div className="flex justify-center space-x-6 mb-12">
+          {socialLinks.map(({ icon: Icon, href, label, color }) => (
+            <a
+              key={label}
+              href={href}
+              aria-label={label}
+              className={`w-12 h-12 bg-slate-800/50 hover:bg-slate-700/50 rounded-xl flex items-center justify-center text-gray-400 ${color} transition-all duration-300 hover:scale-110 focus-ring shadow-lg hover:shadow-xl`}
+            >
+              <Icon className="w-5 h-5" />
+            </a>
+          ))}
+        </div>
+
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-slate-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-center md:text-left font-space">
               © {new Date().getFullYear()} AfriGameHub. All rights reserved. 
@@ -139,6 +186,9 @@ const Footer = () => {
               </a>
               <a href="/cookies" className="hover:text-cyan-400 transition-colors font-space">
                 Cookies
+              </a>
+              <a href="/sitemap" className="hover:text-cyan-400 transition-colors font-space">
+                Sitemap
               </a>
             </div>
           </div>
