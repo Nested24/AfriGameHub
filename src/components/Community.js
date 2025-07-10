@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageSquare, Trophy, Calendar, Users, Star, Clock, ThumbsUp, MessageCircle, Award, Zap } from 'lucide-react';
+import { MessageSquare, Trophy, Users, Star, Clock, ThumbsUp, MessageCircle, Zap } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 
 const Community = () => {

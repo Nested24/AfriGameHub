@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Gamepad2, Upload, Users, Star, Globe, Zap, Trophy, 
-  Play, ArrowRight, TrendingUp, Award, Heart, Download 
+  Play, ArrowRight, Heart, Download 
 } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 

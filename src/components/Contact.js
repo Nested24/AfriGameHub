@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, Send, MessageCircle, 
-  Clock, Globe, Twitter, Linkedin, Github 
+  Clock, Twitter, Linkedin, Github 
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AnimatedBackground from './AnimatedBackground';

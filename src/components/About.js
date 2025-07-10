@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Heart, Globe, Users, Zap, Target, Award, 
+  Heart, Globe, Users, Zap, Award, 
   Gamepad2, Star, TrendingUp, Shield, Code, Lightbulb 
 } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';

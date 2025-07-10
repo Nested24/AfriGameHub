@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Play, Heart, Share2, Download, Star, Calendar, 
-  Globe, User, MessageCircle, ThumbsUp, Flag, ArrowLeft 
+  Play, Heart, Share2, Star, Calendar, 
+  Globe, User, ThumbsUp, Flag, ArrowLeft 
 } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 

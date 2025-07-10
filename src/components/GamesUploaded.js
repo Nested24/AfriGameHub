@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Filter, Heart, MessageCircle, Play, Star, Download, Globe, Calendar } from 'lucide-react';
+import { Search, Heart, MessageCircle, Play, Star, Download, Globe, Calendar } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
 
 const GamesUploaded = () => {
